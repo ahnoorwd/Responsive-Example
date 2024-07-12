@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid layout</title>
+    <style>
+        :root{
+            --primary-color:#4A90E2;
+            --secondary-color:#50E3c2;
+            --accent-color: #B8E986;
+            --text-color:#ffffff;
+            --bg-color:#f5f5f5;
+        }
+        body{
+          background-color: var(--bg-color);
+          font-family: Arial, Helvetica, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+     .container{
+        
+        display: grid;
+        grid-template-columns: repeat(4 ,1fr) ;
+    
+        grid-template-rows: repeat(3,100px) 50px 50px;
+        gap: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+     
+       
+     }
+     .box{
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        font-size: 30px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        
+     }
+     .box:hover{
+        transform: scale(1.0.5);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+
+     }
+     #box-1{
+        grid-row: span 5;
+        background-color: var(--secondary-color);
+
+     }
+     #box-11 ,#box-12{
+        grid-column: span 3;
+        background-color: var(--accent-color);
+     }
+     #box-6,#box-7, #box-9,#box-10{
+       background-color: var(--secondary-color);
+     }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="box" id="box-1">box-1</div>
+    <div class="box" id="box-2">box-2</div>
+    <div class="box" id="box-3">box-3</div>
+    <div class="box" id="box-4">box-4</div>
+    <div class="box" id="box-5">box-5</div>
+    <div class="box" id="box-6">box-6</div>
+    <div class="box" id="box-7">box-7</div>
+    <div class="box" id="box-8">box-8</div>
+    <div class="box" id="box-9">box-9</div>
+    <div class="box" id="box-10">box-10</div>
+    <div class="box" id="box-11">box-11</div>
+    <div class="box" id="box-12">box-12</div>
+   </div>
+</body>
+</html>
